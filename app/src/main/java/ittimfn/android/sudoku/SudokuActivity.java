@@ -1,9 +1,11 @@
-package ittimfn.android.helloworld;
+package ittimfn.android.sudoku;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import ittimfn.android.sudoku.R;
+
+public class SudokuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
