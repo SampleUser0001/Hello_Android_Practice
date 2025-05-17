@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
 
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MenuInflater;
+
 import ittimfn.android.sudoku.R;
 
 public class SudokuActivity extends AppCompatActivity implements OnClickListener {
@@ -62,5 +66,23 @@ public class SudokuActivity extends AppCompatActivity implements OnClickListener
         // Logic to show the about screen
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(R.id.settings == id) {
+            startActivity(new Intent(this, Settings.class));
+            return true;
+        }
+        return false;
     }
 }
